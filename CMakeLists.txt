@@ -11,8 +11,15 @@ project(result
 include(cmake/CPM.cmake)
 
 CPMAddPackage("gh:fmtlib/fmt#10.1.1")
-CPMAddPackage("gh:TartanLlama/expected#v1.1.0")
 CPMAddPackage("gh:boostorg/preprocessor#boost-1.86.0")
+#CPMAddPackage("gh:TartanLlama/expected#v1.1.0")
+
+CPMAddPackage(
+  NAME expected
+  GITHUB_REPOSITORY TartanLlama/expected 
+  VERSION 1.1.0
+  EXPECTED_BUILD_TESTS NO
+)
 
 CPMAddPackage( 
   NAME meanbot_error 
